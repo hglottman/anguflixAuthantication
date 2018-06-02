@@ -1,0 +1,26 @@
+
+img {
+    width: 100%;
+    height: 100px;   
+}
+
+.movie-card {
+    box-sizing: border-box;
+    width: 100%;
+    height: 100%; 
+     
+}
+
+p {
+    font-size: x-small;
+}
+
+p:hover {
+    font-size: small;
+
+}
+
+.buy-btn {
+    background-color: rgb(192, 182, 202);
+}
+

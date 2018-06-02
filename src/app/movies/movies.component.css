@@ -1,0 +1,43 @@
+.movies-container{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 100px repeat(auto-fit, auto);
+    grid-gap: 1em;
+    padding: 2%;
+    
+}
+
+.movie {
+    box-sizing: border-box;
+    width: 90%;
+    height: 100%;
+    border: 1px solid black;
+
+
+}
+
+.head {
+    box-sizing: border-box;
+    align-content:  center;
+    grid-row: 1 / 1;
+    grid-column: 1 / -1;
+}
+
+h3 {
+    display: block;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

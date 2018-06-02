@@ -1,0 +1,18 @@
+
+<div class="search-container">
+    <label>Serach By Title: </label>
+    <mat-form-field>
+        <input matInput type="search" placeholder="Enter Your Search" [(ngModel)]="filterByTitle">
+    </mat-form-field>
+
+    <label>Serach By Year: </label>
+    <mat-form-field>
+      <mat-select [(value)]="filterByYear" aria-placeholder="Choose Year:">
+        <mat-option>None</mat-option>
+        <mat-option value="1994">1994</mat-option>
+        <mat-option value="2016">2016</mat-option>
+        <mat-option value="1991">1991</mat-option>
+      </mat-select>
+    </mat-form-field>
+    <button mat-button class="search-btn" (click)="giveFilterObjectToParant()">search</button>
+</div>

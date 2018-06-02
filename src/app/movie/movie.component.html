@@ -1,0 +1,18 @@
+<mat-card class="movie-card">
+    <h5> {{ movie.title }}, {{movie.year}}</h5>
+    <img src="{{movie.img }}">
+    
+    <mat-card-content>
+        <p>
+            <strong>Description:</strong> {{ movie.descrShort }}
+        </p>
+        <p>
+            <strong>Price</strong>{{movie.price | currency:usd}}
+        </p>
+    </mat-card-content>
+
+    <mat-card-actions>
+        <button class="buy-btn" *ngIf="buttonText == 'purchase'" mat-button (click)="onClickPurchase()">{{buttonText}}</button>
+        <button *ngIf="buttonText == 'remove'" mat-button (click)="onClickRemove()">{{buttonText}}</button>
+    </mat-card-actions>
+</mat-card>

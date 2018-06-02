@@ -1,0 +1,35 @@
+.collection-container {
+    display: grid;
+    grid-template:  auto / repeat(4, 1fr);
+    grid-gap: 1em;
+
+}
+
+.movie {
+    box-sizing: border-box;
+    margin: auto;
+    width: 90%;
+    height: 90%;
+    margin-bottom: 10%;
+
+}
+    
+
+
+
+
+img {
+
+    width: 100%;
+    height: auto;
+}
+
+
+
+h1 {
+    grid-column: 2 / 4;
+    text-align: center;
+    background-color: rgb(201, 205, 231);
+    border-radius: 10px;
+}
+
