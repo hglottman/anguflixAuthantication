@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { MoviesService } from '../movies.service';
 import { User } from '../user';
 import { Movie } from '../movie';
+import { Observable, Subject } from 'rxjs';
+import { UserService } from '../user.service';
 
 
 @Component({
@@ -12,30 +14,40 @@ import { Movie } from '../movie';
 }) 
 export class MoviesComponent implements OnInit {
 
-public movies : Array<Movie> = Array<Movie>();
+public movies: Array<Movie> = Array<Movie>();
 public user : User;
-// public filterByTitle: any;
-// public filterByYear: number;
 public multiFilter = {}
 
 
-  constructor (public moviesService: MoviesService) {
+
+  constructor (public moviesService: MoviesService, private userService : UserService) {
   
-    this.movies = this.moviesService.getMovies();
-    this.user = this.moviesService.getUser();
+  
    }
 
   ngOnInit() {
+    
+     this.moviesService.getMovies().subscribe((data) => {
+       this.movies = data;
+     })
+
+     this.moviesService.getMovieObservable.subscribe(data => this.movies = data);
+         console.log(this.movies)
   }
 
 
   purchaseMovie(movie: Movie){
-    this.moviesService.budgetCheck(movie);
+    this.userService.budgetCheck(movie);
     }
 
 setFilter(multiFilter){
-  
-  this.multiFilter = multiFilter;
+  if(multiFilter.filterByTitle === undefined || multiFilter.filterByTitle === "") {
+    this.moviesService.getMovies();
+  } else {
+    this.moviesService.filterMovies(multiFilter);
+
+
+  }
 
 }
 

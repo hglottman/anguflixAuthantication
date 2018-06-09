@@ -1,13 +1,10 @@
-<div class="collection-container">
-  
+<div class ="movies-collection">
+
+        <h2>Your Movie Collection:</h2>
         <div class="movie" *ngFor="let movie of movieCollection; let idx = index">
-                <app-movie [movie] = "movie" (parentRemove) = "removeFromCollection($event)" buttonText = "remove"></app-movie>
+                <app-movie [movie]="movie" (parentRemove)="removeFromCollection($event)" buttonText="remove"></app-movie>
         </div>
-       <h1 *ngIf = "movieCollection.length == 0">Please Select A Movie From The List Below</h1>
-       
+        <h1 *ngIf="movieCollection.length == 0">Please Select A Movie From The List Below</h1>
+
 
 </div>
-
-  
-
-

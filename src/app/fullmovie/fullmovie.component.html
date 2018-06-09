@@ -1,0 +1,39 @@
+<mat-card class="movie-card-toInspeced">
+    <h5> {{ movie.title }}, {{movie.year}}</h5>
+    <div class="img-div">
+        <img src="{{movie.imgUrl}}">
+    </div>
+
+
+    <mat-card-content class="content">
+
+        <p>
+            <strong>Description: </strong> {{ movie.fullDescription }}
+        </p>
+
+        <p class="price">
+            <strong>Price: </strong>{{movie.price | currency:usd}}
+        </p>
+        <p class="director">
+            <strong>Director: </strong>{{movie.director}}
+        </p>
+        <br>
+        <button class="display-reviews-btn" mat-button (click)="onClickToViewReviews()">Display Movie Reviews</button>
+    </mat-card-content>
+
+    <mat-card-actions class="rtrn-btn">
+        <button class="return-btn" mat-button routerLink="/">Return To Movie Collection</button>
+    </mat-card-actions>
+</mat-card>
+
+<div class = "reviews-grid" *ngIf="displayReviews == true">
+
+    <div class="reviews" *ngFor="let review of movieReviews">
+
+      <p class = "name"> <strong>{{review.name}} :</strong> </p>
+       <div class = "text"><p >{{review.text}}</p></div> 
+        <p class="rating"><strong>Rating : {{review.rating}}</strong><p>
+
+    </div>
+
+</div>

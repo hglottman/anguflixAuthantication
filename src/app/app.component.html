@@ -1,23 +1,23 @@
 <!--The content below is only a placeholder and can be replaced.-->
 
-  <div class="app-container">
-      <div class="header">
-          <h1>
-              Welcome to Angufliped 
-            </h1>
-            <app-budget class="budget"></app-budget>
-      </div>
-         
-          <div class="app-movies">
-              <app-movies></app-movies>
-          </div>   
-          <div class ="movie-collection">
-            <h2>Your Movie Collection:</h2>
-            <app-moviecollection></app-moviecollection>
-          </div>
-  </div>
-
-
-
-
-
+<div class="app-wrapper">
+    <div class="header">
+      
+        <div class="header-grid">
+            <p>
+                Welcome to Angufliped
+            </p>
+            <button mat-button routerLink="/">Home</button>
+            <div class="budget">
+                <app-budget></app-budget>
+            </div>
+        </div>
+        
+    </div>
+    <div class="app-movies">
+        <app-movies></app-movies>
+    </div>
+    <div class="mid-section">
+        <router-outlet></router-outlet>
+    </div>
+</div>

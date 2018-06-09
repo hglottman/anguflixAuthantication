@@ -23,9 +23,7 @@ public filterByYear;
   }
 
  giveFilterObjectToParant(){
-   if(this.filterByTitle === ""){
-     this.filterByTitle = undefined;
-   }
+   
    let  multiFilter =  {
     filterByTitle: this.filterByTitle,
     filterByYear: this.filterByYear

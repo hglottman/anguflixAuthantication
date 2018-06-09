@@ -8,7 +8,8 @@ import {MatButtonModule} from '@angular/material/button';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { FormsModule } from '@angular/forms';
 import { RouterModule, Routes } from '@angular/router';
-import {MatSelectModule} from '@angular/material/select'
+import {MatSelectModule} from '@angular/material/select';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { MoviesComponent } from './movies/movies.component';
@@ -19,6 +20,8 @@ import { MovieComponent } from './movie/movie.component';
 import { BudgetComponent } from './budget/budget.component';
 import { FilterPipe } from './filter.pipe';
 import { SearchComponent } from './search/search.component';
+import { FullmovieComponent } from './fullmovie/fullmovie.component';
+import { AppRoutingModule } from './/app-routing.module';
 
 @NgModule({
   declarations: [
@@ -29,7 +32,8 @@ import { SearchComponent } from './search/search.component';
     MovieComponent,
     BudgetComponent,
     FilterPipe,
-    SearchComponent
+    SearchComponent,
+    FullmovieComponent
   ],
   imports: [
     BrowserModule,
@@ -41,6 +45,8 @@ import { SearchComponent } from './search/search.component';
     MatButtonModule,
     MatSelectModule,
     BrowserAnimationsModule,
+    HttpClientModule,
+    AppRoutingModule
   ],
   providers: [MoviesService],
   bootstrap: [AppComponent]

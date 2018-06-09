@@ -1,44 +1,66 @@
-.app-container {
+@import url(http://fonts.googleapis.com/css?family=Bitter:400,700);
+
+.app-wrapper {
     display: grid;
-    grid-template-columns: 2fr 1fr;
-    grid-template-rows: 150px auto auto;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: auto auto auto;
 }
 
 .app-movies {
     grid-column: 1 / -1;
-    grid-row: 3 / 3;
-    background-color: rgb(165, 163, 163);
+    grid-row: 3 / 4;
+    background-color: rgb(163, 163, 165);
 
 }
 
-.movie-collection {
-    
+
+
+.mid-section {
     grid-column: 1 / -1;
     grid-row: 2 / 2;
-    min-height: 150px;
+    min-height: 200px;
+    display:grid;
     background-color: rgb(97, 97, 100);
     padding-left: 1%;
     padding-right: 1%;
+    padding-bottom: 2%;
+    padding-top: 2%;
 }
 
 .header {
     box-sizing: border-box;
-    grid-row: 1 / 1;
-    grid-column: 1 / 3;
-    background-color: rgb(165, 163, 163);
+    grid-row: 1 / 2;
+    grid-column: 1 / -1;
+    background-color: rgb(163, 163, 165);
+
 }
 
+.header-grid {
+    display: grid;
+    grid-template:  50px 100px 50px / 1fr 2fr 1fr 
+}
 
-
-.header h1 {
-    font-style: oblique;
+.header p {
+    margin: 50px auto;
     text-align: center;
+    margin: auto;
+	text-shadow: -1px -1px 0px rgba(31, 1, 58, 0.932), 2px 2px 0px rgba(50, 2, 112, 0.986);
+	color: rgb(32, 2, 114);
+	opacity: 0.7;
+	font:  50px 'Bitter';
+    grid-column: 1 / -1;
+    grid-row: 2 / 3;
+}
+
+.budget {
+    font-size: 20px;
+    font-family: 'Courier New', Courier, monospace;
+    text-align: right;
+    padding-right: 20px;
+    grid-row: 1 / 2;
+    grid-column: 3 / -1;
+
 }
 
 
 
-h3 {
- 
-    grid-row: 2 / 2
-
-}

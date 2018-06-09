@@ -2,14 +2,27 @@
 
 
 export class Movie {
-    public id: number;
-    public img: string;
+    public _id: string;
+    public imgUrl: string;
     public title: string;
-    public price: number;
     public year: number;
-    public descrShort: string;
+    public price: number;
+    public shortDescription: string;
+    public fullDescription : string;
+    public director : string;
+    public reviews : [{
+        name: string,
+        rating: {
+            type: number,
+            min: 0,
+            max: 5
+        },
+        text: string
+    }];
+
 
     constructor() {
         
     }
 }
+

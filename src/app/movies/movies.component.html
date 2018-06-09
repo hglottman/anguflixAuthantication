@@ -4,7 +4,7 @@
    <app-search (parentFunction) = "setFilter($event)" ></app-search>
     </div>
   
-  <div class="movie" *ngFor="let movie of movies | filter: multiFilter">
+  <div class="movie" *ngFor="let movie of movies">
     <app-movie [movie]="movie" (parentPurchase) = "purchaseMovie($event)" buttonText = "purchase"></app-movie>
   </div>
 </div>

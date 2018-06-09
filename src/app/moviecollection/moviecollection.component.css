@@ -1,23 +1,19 @@
-.collection-container {
+.movies-collection {
     display: grid;
-    grid-template:  auto / repeat(4, 1fr);
-    grid-gap: 1em;
-
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 100px repeat(auto-fit, auto);
+    
 }
 
 .movie {
     box-sizing: border-box;
-    margin: auto;
     width: 90%;
-    height: 90%;
-    margin-bottom: 10%;
+    height: 100%;
+    border: 1px solid black;
+
 
 }
     
-
-
-
-
 img {
 
     width: 100%;
@@ -25,11 +21,18 @@ img {
 }
 
 
+h2 {
+    grid-column: 1 / -1;
+    grid-row: 1 / 2;
+ 
+}
 
 h1 {
     grid-column: 2 / 4;
+    grid-row: 2 / 3;
     text-align: center;
     background-color: rgb(201, 205, 231);
     border-radius: 10px;
+
 }
 

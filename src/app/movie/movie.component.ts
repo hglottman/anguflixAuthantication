@@ -1,5 +1,6 @@
 import { Component, OnInit, Output, Input, EventEmitter } from '@angular/core';
 import { Movie } from '../movie';
+import { Observable, Subject } from 'rxjs';
 
 
 @Component({
@@ -14,10 +15,22 @@ export class MovieComponent implements OnInit {
   @Output() parentPurchase: EventEmitter<Movie> = new EventEmitter();
   @Output() parentRemove: EventEmitter<Movie> = new EventEmitter();
 
+  public selectMovieObservable : Observable<Movie>;
+  private selectMovieSubject : Subject<Movie>;
 
-  constructor() { }
+
+  constructor() { 
+
+    this.selectMovieSubject = new Subject<Movie>();
+    this.selectMovieObservable = this.selectMovieSubject.asObservable();
+  }
 
   ngOnInit() {
+  }
+
+  onClickInspeced () {
+    console.log("I have been clicked")
+    this.selectMovieSubject.next(this.movie);
   }
 
   onClickPurchase() {

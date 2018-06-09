@@ -1,10 +1,10 @@
-<mat-card class="movie-card">
+<mat-card class="movie-card" >
     <h5> {{ movie.title }}, {{movie.year}}</h5>
-    <img src="{{movie.img }}">
+    <img src="{{movie.imgUrl}}">
     
-    <mat-card-content>
+    <mat-card-content [routerLink]="['fullmovie', movie._id]" (click) = "onClickInspeced()">
         <p>
-            <strong>Description:</strong> {{ movie.descrShort }}
+            <strong>Description:</strong> {{ movie.shortDescription }}
         </p>
         <p>
             <strong>Price</strong>{{movie.price | currency:usd}}

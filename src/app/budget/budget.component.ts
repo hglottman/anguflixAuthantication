@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MoviesService } from '../movies.service';
 import { User } from '../user';
+import { UserService } from '../user.service';
 
 @Component({
   selector: 'app-budget',
@@ -10,14 +11,16 @@ import { User } from '../user';
 export class BudgetComponent implements OnInit {
 
   public user: User;
-  constructor(private moviesService : MoviesService) { 
+  constructor(private userService : UserService) { 
 
-    this.user = this.moviesService.getUser()
+  
   
 
   }
   
   ngOnInit() {
+
+    this.user = this.userService.getUser()
   }
 
 
