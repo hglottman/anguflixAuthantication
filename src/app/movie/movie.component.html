@@ -1,7 +1,8 @@
 <mat-card class="movie-card" >
     <h5> {{ movie.title }}, {{movie.year}}</h5>
     <img src="{{movie.imgUrl}}">
-    
+    <br>
+    <br>
     <mat-card-content [routerLink]="['fullmovie', movie._id]" (click) = "onClickInspeced()">
         <p>
             <strong>Description:</strong> {{ movie.shortDescription }}

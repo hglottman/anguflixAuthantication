@@ -1,14 +1,17 @@
 .search-btn {
-    border: 1px solid rgb(204, 201, 201);
-    margin-left:5px;
+    background-color: black;
+    color: whitesmoke; 
+    border:1px solid darkblue;
+    border-radius: 5px; 
+    margin-left: 10px;
 }
 
 .search-container {
     padding-left: 10px;
     padding-right: 10px;
     display: inline-block;
-    border-radius: 10px;
-    border: 1px solid black;
+
+
 }
 
 

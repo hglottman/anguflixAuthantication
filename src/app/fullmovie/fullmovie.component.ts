@@ -47,7 +47,7 @@ export class FullmovieComponent implements OnInit {
   }
 
   onClickToViewReviews() {
-    this.displayReviews = true;
+    this.displayReviews ? this.displayReviews = false : this.displayReviews = true;
     console.log(this.displayReviews)
   }
 }

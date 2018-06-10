@@ -22,6 +22,7 @@ import { FilterPipe } from './filter.pipe';
 import { SearchComponent } from './search/search.component';
 import { FullmovieComponent } from './fullmovie/fullmovie.component';
 import { AppRoutingModule } from './/app-routing.module';
+import { AngularFontAwesomeModule } from 'angular-font-awesome';
 
 @NgModule({
   declarations: [
@@ -46,7 +47,8 @@ import { AppRoutingModule } from './/app-routing.module';
     MatSelectModule,
     BrowserAnimationsModule,
     HttpClientModule,
-    AppRoutingModule
+    AppRoutingModule,
+    AngularFontAwesomeModule
   ],
   providers: [MoviesService],
   bootstrap: [AppComponent]
