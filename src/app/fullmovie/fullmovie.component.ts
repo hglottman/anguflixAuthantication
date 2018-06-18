@@ -19,7 +19,8 @@ export class FullmovieComponent implements OnInit {
   ngOnInit() {
 
     this.route.params.subscribe(params => {
-      this.moviesService.getOneMovie(params.id).subscribe(data => {
+      this.moviesService.getOneMovie(params.id)
+      this.moviesService.getOneMovieObservable.subscribe(data => {
         this.movie = data;
         this.movieReviews = this.movie.reviews;
         this.movieReviews = this.removingEmptyReviews(this.movieReviews)

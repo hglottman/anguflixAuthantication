@@ -20,7 +20,6 @@ export class Movie {
         text: string
     }];
 
-
     constructor() {
         
     }

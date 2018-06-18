@@ -14,13 +14,18 @@ export class MoviesService {
   public movies: Array<Movie> = Array<Movie>();
   public getMovieObservable: Observable<Movie[]>;
   private getMovieSubject: Subject<Movie[]>;
+// subject for one movie:
+  public getOneMovieObservable: Observable<Movie[]>;
+  private getOneMovieSubject: Subject<Movie[]> = new Subject <Movie[]>();
 
   constructor(private http: HttpClient) {
     this.getMovieSubject = new Subject<Movie[]>();
     this.getMovieObservable = this.getMovieSubject.asObservable();
+    this.getOneMovieObservable = this.getOneMovieSubject.asObservable();
+    this.getMovies();
   }
 
-  getMovies() {
+  getMovies(): void {
     let movieObservable = this.http.get<Array<Movie>>('https://anguflix-api.herokuapp.com/api/movies')
     movieObservable.subscribe((data) => {
       this.movies = data;
@@ -28,12 +33,13 @@ export class MoviesService {
     }
 
     )
-    return movieObservable
   }
 
   getOneMovie(id : number) {
     console.log(id);
-   return this.http.get<Array<Movie>>('https://anguflix-api.herokuapp.com/api/movies/'+ id);
+    this.http.get<Array<Movie>>('https://anguflix-api.herokuapp.com/api/movies/'+ id).subscribe(data => {
+      this.getOneMovieSubject.next (data);
+   })
 
   }
 

@@ -26,13 +26,9 @@ public multiFilter = {}
    }
 
   ngOnInit() {
-    
-     this.moviesService.getMovies().subscribe((data) => {
-       this.movies = data;
-     })
-
+   
      this.moviesService.getMovieObservable.subscribe(data => this.movies = data);
-         console.log(this.movies)
+         
   }
 
 

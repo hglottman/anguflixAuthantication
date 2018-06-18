@@ -23,6 +23,7 @@ import { SearchComponent } from './search/search.component';
 import { FullmovieComponent } from './fullmovie/fullmovie.component';
 import { AppRoutingModule } from './/app-routing.module';
 import { AngularFontAwesomeModule } from 'angular-font-awesome';
+import { LoginfileComponent } from './loginfile/loginfile.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import { AngularFontAwesomeModule } from 'angular-font-awesome';
     BudgetComponent,
     FilterPipe,
     SearchComponent,
-    FullmovieComponent
+    FullmovieComponent,
+    LoginfileComponent
   ],
   imports: [
     BrowserModule,
