@@ -5,6 +5,8 @@ const http = require('http');
 const bodyParser = require('body-parser');
 const passport = require('passport');
 const app = express();
+const LocalStrategy = require('passport-local').Strategy;
+
 
 // Parsers for POST data
 app.use(bodyParser.json());
@@ -29,3 +31,18 @@ server.listen(port, () => console.log(`API running on localhost:${port}`));
 app.get('/login', (req, res) => {
     res.sendFile(path.join(__dirname, 'src/Login.html'));
   });
+
+  app.post('/login', passport.authenticate('local', {
+    successRedirect: '/',
+    failureRedirect: '/login?err',
+    session: false
+  }));
+
+
+  passport.use(new LocalStrategy(function(username, password, done) {
+    if ((username === "john") && (password === "password")) {
+      return done(null, { username: username, id: 1 });
+    } else {
+      return done(null, false);
+    }
+  }));
